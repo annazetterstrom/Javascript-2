@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inköpslista</title>
+</head>
+<body>
+    <h1>Inköpslista</h1>
+    <h2>Vad vill du handla idag?</h2>
+    <input type="text" id="newItem" autofocus>
+    <button id="addBtn">Lägg till</button>
+    <ul id="list"></ul>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            let $demo = $('#newItem');
+            $(document).ready(function(){
+                
+                // Hämta element
+                let $item = $('#newItem');
+                let $addBtn = $('#addBtn');
+                let $list = $('#list');
+
+                $addBtn.click(function(){
+                    $value = $item.val();
+                    if($value !== ''){
+                        $list.append('<li>' + $value + '</li>');
+                        $item.val('');
+                    }
+                
+                });
+              
+            }); // ready
+     
+        </script>
+</body>
+</html>

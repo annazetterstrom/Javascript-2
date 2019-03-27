@@ -1,0 +1,3 @@
+<h3> Filen: demo1.txt är en enkel textfil </h3>
+<br>
+Hej Hej från textfil 1.

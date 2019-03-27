@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - Demo 3</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #demo1 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery - Demo 3</h1>
+
+    <h2>Show och Hide</h2>
+
+    <button id="show" class="btn btn-outline-info m-2">Visa</button>
+    <button id="hide" class="btn btn-outline-info m-2">Dölj</button>
+
+    <div id="demo1">
+        <img class="ml-2" src="https://picsum.photos/200/300" alt="random picture">
+        <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, aut!</p>
+        <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, aut!</p>
+        <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, aut!</p>
+        <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, aut!</p>
+        <p class="m-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, aut!</p>
+    </div>
+
+    <br>
+    <button class="btn btn-outline-primary m-2" id="demo2">Visa</button>
+    <p class="demo2 m-2" style="display:none">Lorem ipsum dolor sit amet.</p>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // Visa innehåll 
+            $("#show").click(function () {
+                $("#demo1").show(300)
+            });
+            $("#hide").click(function () {
+                $("#demo1").hide(300)
+            });
+
+            // Toggle 
+            $("#demo2").click(function () {
+                $(".demo2").toggle(300);
+                $(this).text(function (i, text) {
+                    return text == "Visa" ? "Dölj" : "Visa";
+                })
+            });
+
+        });
+    </script>
+
+    <script src="demo-03.js"></script>
+
+</body>
+
+</html>

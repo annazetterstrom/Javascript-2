@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dog API </title>
+    <style>
+    *{
+        text-align: center;
+    }
+
+    </style>
+</head>
+
+<body>
+
+<h1 id="rnd">Random image from Dog API</h1>
+<div id="imgdiv"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $.getJSON('https://dog.ceo/api/breeds/image/random', function (data) {
+                $('#imgdiv').append('<img src="' + data.message + '">' )
+            
+            })
+
+            $('#rnd').on('click', function(){
+                $.getJSON('https://dog.ceo/api/breeds/image/random', function (data) {
+                    $('#imgdiv img').attr('src', data.message);
+                });
+            })
+
+        }); // ready
+    </script>
+
+</body>
+
+</html>

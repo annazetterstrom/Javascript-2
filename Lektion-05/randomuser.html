@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random User </title>
+   
+</head>
+
+<body>
+
+ 
+    <button id="new">New person</button>
+    <br>
+    <div>
+        <img src="" alt="">
+        <h2></h2>
+        <p id="age"></p>
+        <p id="city"> </p>
+        <button id="contact">
+            <a href="">
+                Contact me
+            </a>
+        </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $.getJSON('https://randomuser.me/api/', function (data) {
+                let person = data.results[0];
+                console.log(data.results[0])
+
+                $('h2').html(person.name.first + " " + person.name.last);
+                $('#age').html('Ålder: ' + person.dob.age);
+                $('#city').html('City: ' + person.location.city);
+                $('img').attr('src', person.picture.medium);
+                $('#contact').attr('href', person.email);
+
+
+
+            })
+
+        }); // ready
+    </script>
+
+</body>
+
+</html>
