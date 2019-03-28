@@ -15,7 +15,10 @@
         .then(resp => response.json())
         .then(data => console.log(data))
         .catch(err => console.error(error));
-    
+
+    fetch('https://jsonplaceholder.typicode.com/')
+        .then(resp => resp.json)
+        .then()
     
     </script>
 </body>
